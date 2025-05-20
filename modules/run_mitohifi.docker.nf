@@ -12,7 +12,9 @@ process runMitoHiFi {
     path refGbk // Reference Genbank file
 
     output: 
-    path "*"
+    path "final_mitogenome.fasta"
+    path "final_mitogenome.gb"
+    path "final_mitogenome.annotation.png"
 
     script:
     
