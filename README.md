@@ -12,6 +12,12 @@ Note: Don't forget the double quotes (`'"species name"'`) in the `--species` fla
 `/path/to/hifi/reads` is the path to a directory that contains one or more HiFi reads in a `fastq.gz` format. `seqkit` is used to convert and combine the fastq reads to a single `fasta.gz` intermediate file that can be safely removed once the pipeline run is completed. 
 
 ## Output directory
-Once the pipeline is run, you should see two new directories: 
+You should see two new directories after a succesful run: 
 - `results/MitoHiFi` contains 3 files from the mitohifi output directory. `final_mitogenome.annotation.png`, `final_mitogenome.fasta` and `final_mitogenome.gb`, which are all self-explanatory.
-- `work`: Standard nextflow output directory, contains all the intermediate process outputs, and also all the files of mitohifi output, if you want to dig deeper into the output files. 
+- `work`: Standard nextflow output directory, contains all the intermediate process outputs, and also all the files of mitohifi output, if you want to dig deeper into the output files.
+
+
+### Tools used in the pipeline:
+- MitoHiFi: https://github.com/marcelauliano/MitoHiFi
+- seqkit: https://github.com/shenwei356/seqkit
+ 
