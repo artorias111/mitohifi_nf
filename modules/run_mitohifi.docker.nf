@@ -24,7 +24,7 @@ process runMitoHiFi {
     -f ${refFasta} \
     -g ${refGbk} \
     -t ${params.nthreads} \
-    -o 5
+    -o 2
     """
 
 }
