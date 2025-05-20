@@ -4,7 +4,7 @@ A nextflow wrapper of mitohifi. \
 Example usage:
 
 ```
-nextflow run mitohifi.nf --species '"Notothenia coriiceps"' --ReadsDir "/absolute/path/to/hifi/reads" --nthreads 10
+nextflow run mitohifi.nf --species '"Notothenia coriiceps"' --readsDir /absolute/path/to/hifi/reads --nthreads 10
 ```
 Default `nthreads` is 18. \
 Note: **Do NOT forget to add two sets of quotes** (a double quote **nested** in a single quote) (`'"species name"'`) in the `--species` flag. The pipeline will crash if ignored. This is due to the behavior of mitoHiFi's `findMitoReference.py`, which expects the species name in double quotes. \
