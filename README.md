@@ -4,5 +4,6 @@ A nextflow wrapper of mitohifi. \
 Example usage:
 
 ```
-nextflow run mitohifi.nf --species "Notothenia coriiceps" --ReadsDir "/path/to/hifi/reads"
+nextflow run mitohifi.nf --species "Notothenia coriiceps" --ReadsDir "/path/to/hifi/reads" --nthreads 10
 ```
+Default `nthreads` is 18. 
