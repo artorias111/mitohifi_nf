@@ -5,15 +5,22 @@
 
 
 process findMitoRef {
-    conda '/data2/work/local/miniconda/envs/mitohifi_env'
+    container "${params.mitohifi_docker_container}"
+
+    input:
+    val species
 
     output:
-    path "refs"
+    path 'refs/*.gb' , emit :ref_gb_file
+    path 'refs/*.fa*' , emit :ref_fa_file
 
     script:
+
     """
-    python {}/findMitoReference.py \
-    --species ${params.species} \
-    --outfolder "refs"
+    findMitoReference.py \
+    --species ${species} \
+    --outfolder "refs" \
     --min_length 14000
     """
+
+}
