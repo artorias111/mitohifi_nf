@@ -7,6 +7,11 @@ Example usage:
 nextflow run mitohifi.nf --species '"Notothenia coriiceps"' --ReadsDir "/absolute/path/to/hifi/reads" --nthreads 10
 ```
 Default `nthreads` is 18. \
-Note: Don't forget the double quotes (`'"species name"'`) in the `--species` flag. The pipeline will crash if ignored. This is due to the behavior of mitoHiFi's `findMitoReference.py`, which expects the species name in double quotes. 
+Note: Don't forget the double quotes (`'"species name"'`) in the `--species` flag. The pipeline will crash if ignored. This is due to the behavior of mitoHiFi's `findMitoReference.py`, which expects the species name in double quotes. \
 
+`/path/to/hifi/reads` is the path to a directory that contains one or more HiFi reads in a `fastq.gz` format. `seqkit` is used to convert and combine the fastq reads to a single `fasta.gz` intermediate file that can be safely removed once the pipeline run is completed. 
 
+## Output directory
+Once the pipeline is run, you should see two new directories: 
+- `results/MitoHiFi` contains 3 files from the mitohifi output directory. `final_mitogenome.annotation.png`, `final_mitogenome.fasta` and `final_mitogenome.gb`, which are all self-explanatory.
+- `work`: Standard nextflow output directory, contains all the intermediate process outputs, and also all the files of mitohifi output, if you want to dig deeper into the output files. 
